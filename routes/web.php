@@ -15,28 +15,28 @@ Route::get('/test/testpage', function () {
     return view('test');
 });
 
-
+Route::get('validation', function () {
+    return view('testvalidation');
+});
 
 Route::get('ID/{id}', function ($id) {
     return 'ID: ' .$id;
 });
 
-Route::get('ID/{id?}', function($id = null){
-return $id;
+Route::get('ID/{id?}', function ($id = null) {
+    return $id;
 });
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
 */
 
-
-Route::get('/', 'MyController@index');
+Route::get('/', 'MyController@index'); 
 Route::get('/about', 'MyController@about');
 Route::get('/service', 'MyController@services');
 
-Route::resource('post', 'PostController');
 
-Route::resource('post', 'RegistrationController');
+Route::resource('posts', 'PostController');
+
